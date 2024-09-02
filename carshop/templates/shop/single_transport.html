@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %} {{transport.title}} {% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">{{ transport.title }}</h1>
+    <div class="card" style="width:24rem;">
+        <img src={{ transport.car_picture }} class="card-img-top" alt="failed to load image">
+        <div class="card-body">
+            <p class="card-text"><h3>{{ transport.title }}</h3></p>
+        </div>
+    </div>
+
+    <h3>
+        {{ transport.category }}
+    </h3>
+
+    <p>
+        <b>Price:</b> {{ transport.price }}$
+    </p>
+
+    <p>
+        <b>Engine type:</b> {{ transport.engine_type }}
+    </p>
+
+    <p>
+        <b>Engine power:</b> {{ transport.engine_power }} hp
+    </p>
+
+    <p>
+        <b>Engine Volume:</b> {{ transport.engine_volume }} litres
+    </p>
+
+    <p>
+        <b>{{ transport.category }} rating:</b> {{transport.rating}}/10.0
+    </p>
+
+    <p>
+        Покупай, не пожалеешь, брат, жопу ставлю
+    </p>
+
+    <button class="btn btn-primary">Add to Cart</button>
+{% endblock %}

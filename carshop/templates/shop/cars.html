@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}All Cars{% endblock %}
+
+{%block content %}
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Model</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transport in transports %}
+        <tr>
+            <td>
+                <a href={% url "shop:single_transport" transport.id %}>{{ transport.title }}</a>
+            </td>
+            <td>{{transport.category}}</td>
+            <td>{{transport.price}}</td>
+            <td>{{transport.rating}}</td>
+            <td><button href="" class="btn btn-primary">Learn more</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
